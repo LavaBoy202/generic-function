@@ -3,14 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "gen-count.h"
-#include "cs136-trace.h"
 #include <string.h>
 int generic_map(void *arr, int len, size_t size,
                 bool (*map_function)(void *)) {
   int count = 0;
   char *arr_base = arr;
   for (int i = 0; i < len; ++i) {
-    //trace_int(arr_base + i * size);
     if (map_function(arr_base + i * size) == true){
       count++;
     }
